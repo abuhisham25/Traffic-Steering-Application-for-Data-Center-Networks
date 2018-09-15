@@ -1,0 +1,11 @@
+all:
+	clear;\
+	sudo mn -c;\
+	clear;\
+	cd ~/pox;\
+	./pox.py log.level --DEBUG samples.basic3LevelTSA
+
+clean:
+	sudo mn -c
+topo:
+	sudo mn --custom ./fatTreeTopology.py --topo FatTreeTopology --mac --switch ovsk --controller remote

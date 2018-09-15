@@ -1,0 +1,5 @@
+service Firewall 10.0.0.10
+service IDS 10.0.0.80
+service Proxy 10.0.0.70
+policy match [eth_type=0x0800,ipv4_src=10.0.0.30] chain [Proxy,Firewall,IDS]
+policy match [eth_type=0x0800,ipv4_src=10.0.0.20,ipv4_dst=10.0.0.50] chain [IDS,Firewall]
